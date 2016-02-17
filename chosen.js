@@ -88,7 +88,7 @@
           });
           scope.$watch(attr.chosenClass, function (classes) {
             for (var setclass in classes) {
-              chosen.container.toggleClass(setclass, classes[setclass]);
+              if (classes[setclass] !== undefined) chosen.container.toggleClass(setclass, classes[setclass]);
             }
           }, true);
           if (attr.ngOptions && ngModel) {
