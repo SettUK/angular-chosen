@@ -1,5 +1,5 @@
 {
-  "name": "angular-chosen-localytics",
+  "name": "angular-chosen-sett",
   "version": "1.0.7",
   "main": "chosen.js",
   "ignore": [
@@ -7,7 +7,7 @@
     "example"
   ],
   "dependencies": {
-    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.1.0/chosen_v1.1.0.zip",
+    "chosen": "^1.5.0",
     "angular": ">=1.2.0"
   }
 }

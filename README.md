@@ -6,12 +6,12 @@ AngularJS Chosen directive
 This directive brings the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin
 into AngularJS with ngModel and ngOptions integration.
 
-To use, include "localytics.directives" as a dependency in your Angular module.  You can now
+To use, include "sett.chosen" as a dependency in your Angular module.  You can now
 use the "chosen" directive as an attribute on any select element.  Angular version 1.2+ is required.
 
 # Installation
 
-    $ bower install angular-chosen-localytics --save
+    $ bower install angular-chosen-sett --save
 
 ## Yeoman or Bower install
 If you use Yeoman or Bower install, you need to rename the `chosen.jquery.js` or the `chosen.proto.js` to `chosen.js`. Otherwise Chosen won't be included in your `index.html`.
@@ -86,13 +86,24 @@ This annoying behavior is alluded to in the examples in the [documentation for n
 </select>
 ```
 
+### Apply classes to Chosen container
+
+```html
+<select chosen
+        chosen-class="{error: some_error}">
+</select>
+```
+
+Works in a similar way to `ng-class`, will apply the classes to the chosen container.
+
+
 ### Loading from a remote data source
 Include chosen-spinner.css and spinner.gif to show an Ajax spinner icon while your data is loading.  If the collection comes back empty, the directive will disable the element and show a default
 "No values available" message.  You can customize this message by passing in noResultsText in your options.
 
 ##### app.js
 ```js
-angular.module('App', ['ngResource', 'localytics.directives'])
+angular.module('App', ['ngResource', 'sett.chosen'])
 .controller('BeerCtrl', function($scope) {
   $scope.beers = $resource('api/beers').query()
 });
