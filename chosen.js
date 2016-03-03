@@ -68,7 +68,10 @@
             origRender = ngModel.$render;
             ngModel.$render = function() {
               origRender();
-              return initOrUpdate();
+              var prefix = '';
+              if (isNaN(parseInt(ngModel.$viewValue))) prefix = 'string:';
+              element.val(prefix + ngModel.$viewValue);
+              initOrUpdate();
             };
             if (attr.multiple) {
               viewWatch = function() {
