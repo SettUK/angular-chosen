@@ -69,7 +69,7 @@
             ngModel.$render = function() {
               origRender();
               var prefix = '';
-              if (isNaN(parseInt(ngModel.$viewValue))) prefix = 'string:';
+              if (attr.ngOptions && isNaN(parseInt(ngModel.$viewValue))) prefix = 'string:';
               element.val(prefix + ngModel.$viewValue);
               initOrUpdate();
             };
