@@ -89,6 +89,9 @@
           attr.$observe('disabled', function() {
             return element.trigger('chosen:updated');
           });
+          attr.$observe('tabindex', function () {
+            if (chosen) chosen.set_tab_index();
+          });
           scope.$watch(attr.chosenClass, function (classes) {
             for (var setclass in classes) {
               if (classes[setclass] !== undefined) chosen.container.toggleClass(setclass, classes[setclass]);
